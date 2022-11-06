@@ -1,32 +1,3 @@
-/* .header {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  padding: 44px 20px;
-  height: 230px;
-
-  background-image: url("./images/main-header-background-mobile@1x.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    background-image: url("./images/main-header-background-mobile@2x.jpg");
-    }
-  
-
-  @media screen and (min-width: 768px) {
-    background-image: url("./images/main-header-background-tablet@1x.jpg");
-  }
-
-  @media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
-  background-image: url("./images/main-header-background-tablet@2x.jpg");
-}
-} */
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -34,40 +5,60 @@
   padding-right: 20px;
 }
 
-
+/* фоновое изображение мобильная версия */
 .header {
   padding: 44px 20px;
 
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("./images/main-header-background-mobile@1x.jpg");
+  background-image:url("./images/main-header-background-mobile@1x.jpg");
+}
 
-  @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    background-image: url("./images/main-header-background-mobile@2x.jpg");
-  }
 
+/* фоновое изображение планшет */
   @media screen and (min-width: 768px) {
-    padding-bottom: 80px;
-    background-image: url("./images/main-header-background-tablet@1x.jpg");
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-        background-image: url("./images/main-header-background-tablet@2x.jpg");
-      }
-  }
-
-  @media screen and (min-width: 1280px) {
-    background-image: url("./images/main-header-background-desktop@1x.jpg");
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-        background-image: url("./images/main-header-background-desktop@2x.jpg");
-      }
+    .header{
+      padding-bottom: 80px;
+      background-image:url("./images/main-header-background-tablet@1x.jpg");
   }
 }
+
+/* фоновое изображение десктоп */
+  @media screen and (min-width: 1280px) {
+    .header{
+      background-image:url("./images/main-header-background-desktop@1x.jpg");
+    }
+  }
+
+
+/* retina десктоп*/
+@media (min-device-pixel-ratio: 2),
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) { 
+  .header {
+    background-image:url("./images/main-header-background-desktop@2x.jpg");
+  }
+}
+
+/* retina планшет*/
+@media (min-device-pixel-ratio: 2),
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+  .header{
+    background-image:url("./images/main-header-background-tablet@2x.jpg");
+  }
+}
+
+/* retina мобильная версия*/
+@media (min-device-pixel-ratio:2),
+(min-resolution:192dpi),
+(min-resolution:2dppx) {
+  .header {
+    background-image:url("./images/main-header-background-mobile@2x.jpg");
+  }
+}
+
 
 .header-container {
   display: flex;
@@ -77,12 +68,10 @@
 }
 
 
-
 .navigation-list {
   display: flex;
   list-style: none;
 }
-
 
 
 .navigation-link {
@@ -104,15 +93,22 @@
   position: relative;
 }
 
+
 .logo-text {
   display: none;
+
+  @media screen (min-width:768px) {
+    display: flex;
+  }
 }
+
 
 .search-form {
   width: 280px;
-  margin: 60px auto 0;
+  margin: auto;
   position: relative;
 }
+
 
 .search-input {
   padding: 4px;
@@ -134,9 +130,11 @@
   color: #ffffff;
 }
 
+
 .search-input::placeholder{
    color: #ffffff;
 }
+
 
 .submit-button {
   position: absolute;
@@ -148,6 +146,7 @@
   outline: none;
   background-color: transparent;
 }
+
 
 .navigation .navigation-link.current-link::after {
 content: "";
